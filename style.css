@@ -1,0 +1,273 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    /* box-sizing: border-box; */
+}
+html,body{
+  width: 100%;
+  overflow-x: hidden;
+}
+.navbar{
+    background-color: black;
+    height: 600px;
+    width: 100%;
+    display: flex;
+   
+}
+.logo{
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+     margin-top: 30px;
+      margin-left: 80px;
+}
+span{
+    color: rgb(136, 3, 177);
+}
+.nav-opt{
+     margin-top: 30px;
+      margin-left: 80px;
+      position: absolute;
+        right: 150px;
+        display: flex;
+       
+      
+}
+#home{
+  color: rgb(136, 3, 177);
+}
+.nav-opt a{
+  color: white;
+  text-decoration: none;
+    font-size: 18px;
+  margin-left: 50px;
+  
+}
+.nav-icon{
+  color: white;
+  margin-left: 50px;
+}
+.content{
+  color: white;
+  margin-top: 150px;
+  position: absolute;
+  left: 80px;
+}
+.content h1{
+  font-size: 100px;
+  color: white;
+}
+.content p{
+  font-size: 1.50rem;
+  color: gray;
+}
+#objective{
+  font-size: 20px;
+  margin-top: 18px;
+   color: gray;
+}
+#skill{
+  color: white;
+}
+.btn-group{
+ display: flex;
+ flex-direction: row;
+ gap: 20px;
+ align-items:center;
+ margin-top: 380px;
+ position: relative;
+ right: 100px;
+ 
+}
+.down{
+  color: white;
+  border: 2px solid blue;
+  background-color: darkblue;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+  border-radius: 10px;
+  font-size: 20px;
+  
+}
+@keyframes animate{
+  from{
+     opacity: 0;;
+  }
+  to{
+   opacity: 1;
+  }
+}
+.down:hover{
+  cursor: pointer;
+animation: animate 0.85s ease-in-out;
+}
+.contact{
+  border: 2px solid white;
+  color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5.9px;
+  width: 170px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.contact:hover{
+  cursor:pointer;
+  animation: scale 1s ease-in-out;
+}
+@keyframes scale{
+  from{
+    transform: rotateX(-0deg);
+  }
+  to{
+   transform: rotateY(-360deg);
+  }
+}
+
+.social-logo{
+  color: white;
+  margin-top: 550px; 
+  display: flex;
+  position: relative;
+ right: 525px;
+}
+.social-logo i{
+  margin-left: 30px;
+  font-size: 23px;
+  align-items: flex-start;
+
+}
+.image img{
+  height: 510px;
+  margin-top: 90px;
+  margin-left: 400px;
+  background-color: black;
+ position: relative;
+ right: 300px;
+}
+main{
+  background-color: white;
+  
+}
+.main-section{
+  display: flex;
+}
+.main-img img{
+  height: 290px;
+  margin-top: 70px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  width: 380px;
+ 
+  
+}
+.about{
+   margin-left: 20px;
+   margin-top: 85px;
+}
+.about p{
+  color: rgb(136, 3, 177) ;
+  font-weight: 800;
+  font-size: 15px;
+}
+.about pre{
+  color: gray;
+  font-weight: 700;
+}
+.about h1{
+  font-weight: 700;
+}
+#read{
+  color: white;
+  border: 2px solid blue;
+  background-color: darkblue;
+  display: inline;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: normal;
+  
+}
+.about-me{
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  
+}
+.name{
+  display: flex;
+  border-bottom: 0.2px solid rgb(227, 222, 233);
+
+}
+.email{
+  display: flex;
+  margin-top: 50px;
+  border-bottom: 0.2px solid rgb(227, 222, 233);
+}
+.location{
+  display: flex;
+  margin-top: 50px;
+  border-bottom: 0.2px solid rgb(227, 222, 233);
+}
+.freelance{
+  display: flex;
+  margin-top: 50px;
+  border-bottom: 0.2px solid rgb(227, 222, 233);
+}
+.about-me i{
+  font-size: 1.85rem;
+  margin-right: 10px;
+  border: 2px solid darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(61, 6, 78);
+  border-radius: 10px;
+}
+.name h4{
+  font-size: 18px;
+}
+.name i{
+  padding: 3px;
+}
+.about-me p{
+  margin-left: 5px;
+  display: flex;
+  margin-top: 15px;
+  margin-right: 250px;
+}
+.email h4{
+  font-size: 18px
+}
+.location h4{
+  font-size: 18px
+}
+.freelance{
+  font-size: 18px
+}
+.fa-address-card{
+  color: white;
+}
+.fa-envelope{
+  color: white;
+}
+.fa-location-dot{
+ color: white;;
+}
+.fa-square-upwork{
+   color: white;
+}
+.freelance p{
+  font-size: 1rem;
+}
+.freelance i{
+  height: 35px;
+  width: 50px;
+}
