@@ -1,0 +1,28 @@
+{
+  "name": "umar-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Umar - Frontend Developer & BCA Student",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend-developer",
+    "umar",
+    "bca",
+    "web-developer"
+  ],
+  "author": "Umar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
+

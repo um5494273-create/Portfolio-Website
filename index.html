@@ -3,108 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protofolio Website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta name="description" content="Portfolio of Umar - BCA Student & Frontend Developer specializing in responsive websites, AI projects and Android app development.">
+    <meta name="author" content="Umar">
+    <meta name="keywords" content="Umar, Frontend Developer, BCA, Portfolio, Web Developer, Android Developer">
+    <title>Umar | Frontend Developer Portfolio</title>
+
+    <!-- Font Awesome (valid 6.x) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-    <div class="navbar">
-      <div class="logo">
-        <p>Port<span>folio.</span></p>
-      </div>
-      <div class="nav-opt">
-        <a href="#" id="home">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Projects</a>
-        <a href="#">Skills</a>
-        <a href="#">Contact</a>
-     
-      <div class="nav-icon">
-        <i class="fa-solid fa-moon"></i>
-    </div>
-      </div>
-    
-    <div class="content">
-      <p>Hello,I'm</p>
-      <h1>Umar <span>Malik</span></h1>
-      <p id="skill">I'm a <span>Frontend Developer </span>|</p>
-      <pre id="objective">I build responsive and beautiful websites using HTML,CSS,
 
-JavaScript and modern frameworks.</pre>
-    </div>
-   <div class="btn-group">
-    <div class="down">
-      Download CV 
-      <i class="fa-solid fa-download"></i>
-    </div>
-   <div class="contact">
-    Contact Me
-   </div>
-    
-    </div>
-   
+    <!-- Water ripple animation canvas -->
+    <canvas id="waterCanvas"></canvas>
 
-   <div class="social-logo">
-    <i class="fa-brands fa-github"></i>
-    <i class="fa-brands fa-linkedin"></i>
-   <i class="fa-brands fa-twitter"></i>
-    <i class="fa-brands fa-instagram"></i>
-   </div>
-   <div class="image">
-     <img src="image1.jpg" alt="image">
-   </div>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <nav class="navbar" id="navbar">
+            <div class="logo">
+                <a href="#home">Port<span>folio</span>.</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item theme-item">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
     </header>
 
-    <main>
-      <div class="main-section">
-
-        <div class="main-img">
-        <img src="image2.jpg" alt="">
-      </div>
-       
-      <div class="about">
-        <p>About Me</p><br>
-        <h1>Who I Am</h1><br>
-        <pre>I am BCA student and an aspiring Frontend-End Developer. I enjoy building responsive websites and learing<br>
-new web technologies. My focus is on creating clean,modern,and user-friendly designs using HTML and CSS. <br>
-I am continuously improving my skills and working on projects to become a professional web developer.
-        </pre> <br>
-        <p id="read">Read More</p>
-      </div>
-
-      <div class="about-me">
-  
-        <div class="name">
-        <i class="fa-solid fa-address-card"></i>
-        <h4>Name:</h4>
-            <p>Umardeen</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-text">
+                <p class="greeting">Hello, I'm</p>
+                <h1 class="hero-name">Umar <span>Malik</span></h1>
+                <h2 class="hero-title">I'm a <span class="typed-text"></span><span class="cursor">|</span></h2>
+                <p class="hero-objective">
+                    BCA Student &amp; Frontend Developer crafting responsive, modern and
+                    user-friendly websites using HTML, CSS, JavaScript, AI-driven projects
+                    and Android app development.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" id="downloadCv" class="btn btn-primary">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/um5494273-create" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mr-umar-9a5811376" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/umar._vision_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:um5494273@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-blob">
+                    <img src="image1.jpg" alt="Portrait of Umar">
+                </div>
+                <div class="floating-badge badge-1"><i class="fa-brands fa-html5"></i></div>
+                <div class="floating-badge badge-2"><i class="fa-brands fa-css3-alt"></i></div>
+                <div class="floating-badge badge-3"><i class="fa-brands fa-js"></i></div>
+            </div>
         </div>
-        
+    </section>
 
-        <div class="email">
-          <i class="fa-solid fa-envelope"></i>
-          <h4>Email:</h4>
-          <p>umardeen4025555@jmit.ac.in</p>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-heading">
+            <h5>About Me</h5>
+            <h2>Who I Am</h2>
         </div>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="image2.jpg" alt="Umar's photo">
+            </div>
+            <div class="about-content">
+                <p>
+                    I am a BCA student at Seth Jai Prakash Mukand Lal Institute of Engineering
+                    &amp; Technology (JMIT) with a strong passion for Frontend Development, Android
+                    App Development and AI. I enjoy building responsive websites and AI-powered
+                    applications while continuously learning new technologies.
+                </p>
+                <p>
+                    I am currently looking for internships and entry-level opportunities to enhance
+                    my skills and contribute to real-world projects as a professional web developer.
+                </p>
+                <div class="about-info-grid">
+                    <div class="info-item">
+                        <i class="fa-solid fa-address-card"></i>
+                        <div><h4>Name</h4><p>Umar (Mr. Umar)</p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div><h4>Email</h4><p>um5494273@gmail.com</p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div><h4>Phone</h4><p>7015002246</p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div><h4>Location</h4><p>Jagadhri, Haryana, India</p></div>
+                    </div>
+                </div>
+                <div class="about-footer">
+                    <span class="availability"><i class="fa-solid fa-circle"></i> Open to internships</span>
+                    <button id="readMoreBtn" class="btn btn-outline">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-         <div class="location">
-           <i class="fa-solid fa-location-dot"></i>
-          <h4>Location:</h4>
-          <p>Yamunanagar,Haryana,India</p>
-         </div>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-heading">
+            <h5>My Specialties</h5>
+            <h2>Skills &amp; Technologies</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML/CSS</h3>
+                <div class="progress"><div class="progress-bar" data-progress="90"><span>90%</span></div></div>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+                <div class="progress"><div class="progress-bar" data-progress="80"><span>80%</span></div></div>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <h3>Android Development</h3>
+                <div class="progress"><div class="progress-bar" data-progress="70"><span>70%</span></div></div>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-robot"></i>
+                <h3>AI Projects</h3>
+                <div class="progress"><div class="progress-bar" data-progress="75"><span>75%</span></div></div>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-check-double"></i>
+                <h3>HTML/CSS Validation</h3>
+                <div class="progress"><div class="progress-bar" data-progress="85"><span>85%</span></div></div>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Responsive Design</h3>
+                <div class="progress"><div class="progress-bar" data-progress="88"><span>88%</span></div></div>
+            </div>
+        </div>
+    </section>
 
-         <div class="freelance">
-          <i class="fa-brands fa-square-upwork"></i>
-          <h4>Freelance:</h4>
-          <p>Role: Aspiring Front-End Developer</p>
-         </div>
-      
-       </div>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-heading">
+            <h5>What I Offer</h5>
+            <h2>My Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-window-restore"></i>
+                <h3>Responsive Web Development</h3>
+                <p>Modern, mobile-first websites built with clean semantic HTML, CSS and JavaScript.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-paintbrush"></i>
+                <h3>UI / UX Design</h3>
+                <p>Clean, user-friendly, and accessible interface designs focused on great user experience.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h3>Android App Development</h3>
+                <p>Building functional and intuitive Android applications to solve real-world problems.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>AI-Powered Projects</h3>
+                <p>Integrating AI tools and models to build smart, interactive web applications.</p>
+            </div>
+        </div>
+    </section>
 
-      </div>
-      
-    </main>
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificates">
+        <div class="section-heading">
+            <h5>Achievements</h5>
+            <h2>My Certificates</h2>
+        </div>
+        <div class="certificates-grid">
+            <div class="cert-card cert-image-card">
+                <button class="cert-open" data-image="certificate/1777533297127.jfif" data-title="Certificate 1" aria-label="View Certificate 1">
+                    <span class="cert-preview">
+                        <img src="certificate/1777533297127.jfif" alt="Certificate 1" loading="lazy">
+                        <span class="cert-view-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </span>
+                    <h3>Certificate 1</h3>
+                    <span class="cert-year"><i class="fa-solid fa-award"></i> View Certificate</span>
+                </button>
+            </div>
+            <div class="cert-card cert-image-card">
+                <button class="cert-open" data-image="certificate/1772609052228.jfif" data-title="Certificate 2" aria-label="View Certificate 2">
+                    <span class="cert-preview">
+                        <img src="certificate/1772609052228.jfif" alt="Certificate 2" loading="lazy">
+                        <span class="cert-view-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </span>
+                    <h3>Certificate 2</h3>
+                    <span class="cert-year"><i class="fa-solid fa-award"></i> View Certificate</span>
+                </button>
+            </div>
+            <div class="cert-card cert-image-card">
+                <button class="cert-open" data-image="certificate/1772420818743.jfif" data-title="Certificate 3" aria-label="View Certificate 3">
+                    <span class="cert-preview">
+                        <img src="certificate/1772420818743.jfif" alt="Certificate 3" loading="lazy">
+                        <span class="cert-view-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </span>
+                    <h3>Certificate 3</h3>
+                    <span class="cert-year"><i class="fa-solid fa-award"></i> View Certificate</span>
+                </button>
+            </div>
+            <div class="cert-card cert-image-card">
+                <button class="cert-open" data-image="certificate/1760016674220.jfif" data-title="Certificate 4" aria-label="View Certificate 4">
+                    <span class="cert-preview">
+                        <img src="certificate/1760016674220.jfif" alt="Certificate 4" loading="lazy">
+                        <span class="cert-view-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </span>
+                    <h3>Certificate 4</h3>
+                    <span class="cert-year"><i class="fa-solid fa-award"></i> View Certificate</span>
+                </button>
+            </div>
+        </div>
+        <p class="cert-note">Click the image or the "View Certificate" button to open any certificate in full size.</p>
+        <div class="cert-view-button">
+            <a href="Profile.pdf" target="_blank" class="btn btn-primary"><i class="fa-solid fa-file-pdf"></i> View My Profile / Resume</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-heading">
+            <h5>My Work</h5>
+            <h2>Featured Projects</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-thumb" style="background: linear-gradient(135deg,#6a11cb,#2575fc);">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <h3>E-Commerce Website</h3>
+                <p>A responsive online store with product listing, cart and modern UI built with HTML, CSS and JavaScript.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb" style="background: linear-gradient(135deg,#11998e,#38ef7d);">
+                    <i class="fa-brands fa-android"></i>
+                </div>
+                <h3>Android Productivity App</h3>
+                <p>A handy Android application to organize daily tasks and boost productivity for users.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb" style="background: linear-gradient(135deg,#f093fb,#f5576c);">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3>AI Chat Assistant</h3>
+                <p>An AI-powered chat interface which gives helpful responses using a machine learning API.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-heading">
+            <h5>Get In Touch</h5>
+            <h2>Contact Me</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's work together</h3>
+                <p>I'm open to internships, freelance projects and collaboration. Feel free to reach out!</p>
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-envelope"></i> um5494273@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 7015002246</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Jagadhri, Haryana, India</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/um5494273-create" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mr-umar-9a5811376" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/umar._vision_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <small class="error-msg"></small>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <small class="error-msg"></small>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" placeholder="Subject">
+                    <small class="error-msg"></small>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <small class="error-msg"></small>
+                </div>
+                <button type="submit" class="btn btn-primary send-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+                <p class="form-status" id="formStatus"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> <strong>Umar</strong>. All Rights Reserved. Crafted with <i class="fa-solid fa-heart"></i> and code.</p>
+        <div class="footer-top"><a href="#home"><i class="fa-solid fa-arrow-up"></i></a></div>
+    </footer>
+
+    <!-- Certificate Lightbox Modal -->
+    <div class="lightbox" id="certLightbox" aria-hidden="true">
+        <div class="lightbox-overlay" data-close-lightbox></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" data-close-lightbox aria-label="Close">&times;</button>
+            <h3 class="lightbox-title" id="lightboxTitle">Certificate</h3>
+            <img id="lightboxImage" src="" alt="Certificate" class="lightbox-image">
+            <a href="#" id="lightboxOpen" class="btn btn-primary lightbox-download" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in New Tab
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
+
