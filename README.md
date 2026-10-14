@@ -2,6 +2,10 @@
 
 Professional portfolio website for **Umar** — Frontend Developer, BCA Student, Android App Developer & AI enthusiast.
 
+## 🌐 Live Demo
+
+🔗 [View Live Website](https://um5494273-create.github.io/Responsive-design-project/)
+
 ## 🚀 Features
 
 - **Interactive water ripple canvas animation** — reacts to mouse & touch movement
